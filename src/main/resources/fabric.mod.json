@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "shitp_support_library",
+  "version": "${version}",
+  "name": "Shitp Support Library",
+  "description": "Drag and drop resource pack, shader pack, and mod installer.",
+  "authors": [
+    "YourName"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/shitp_support_library/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.shitp.support.ShitpSupportClient"
+    ]
+  },
+  "mixins": [
+    "shitp_support_library.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.21",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
