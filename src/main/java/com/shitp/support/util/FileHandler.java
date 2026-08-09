@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.zip.ZipFile;
 
 public class FileHandler {
 
@@ -24,7 +25,13 @@ public class FileHandler {
             targetDir = gameDir.resolve("mods");
             returnCode = 2;
         } else if (fileName.endsWith(".zip")) {
-            targetDir = gameDir.resolve("resourcepacks");
+            if (isShaderPack(sourceFile)) {
+                targetDir = gameDir.resolve("shaderpacks");
+                returnCode = 3;
+            } else {
+                targetDir = gameDir.resolve("resourcepacks");
+                returnCode = 1;
+            }
         } else {
             return 0;
         }
@@ -40,6 +47,14 @@ public class FileHandler {
         } catch (IOException e) {
             ShitpSupportClient.LOGGER.error("Error moving file", e);
             return 0;
+        }
+    }
+
+    private static boolean isShaderPack(Path zipPath) {
+        try (ZipFile zipFile = new ZipFile(zipPath.toFile())) {
+            return zipFile.getEntry("shaders/") != null || zipFile.getEntry("shaders/world0/") != null;
+        } catch (IOException e) {
+            return false;
         }
     }
 }
