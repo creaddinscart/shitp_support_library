@@ -40,7 +40,6 @@ public class ResourceManagerScreen extends Screen {
         super.render(context, mouseX, mouseY, delta);
     }
 
-    @Override
     public void filesDropped(List<Path> paths) {
         int successCount = 0;
         boolean hasMod = false;
