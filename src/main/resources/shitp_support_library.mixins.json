@@ -4,7 +4,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
-    "MultiplayerScreenMixin"
+    "ScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
