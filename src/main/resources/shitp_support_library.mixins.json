@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.shitp.support.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "MultiplayerScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
