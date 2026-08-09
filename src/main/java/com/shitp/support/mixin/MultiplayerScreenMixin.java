@@ -24,7 +24,7 @@ public class ScreenMixin extends Screen {
         int posY = 5;
 
         if ((Object) this instanceof TitleScreen) {
-            posY = 25; // 避免挡住主菜单原版按钮
+            posY = 25;
         }
 
         this.addDrawableChild(
